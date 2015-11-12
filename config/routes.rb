@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'welcome#index'
+  root 'cities#index'
 
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :posts, only: [:new, :create, :show, :destroy]
