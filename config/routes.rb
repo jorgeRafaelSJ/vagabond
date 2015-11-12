@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  resources :users, only[:new, :create, :show, :edit, :update]
-  resources :posts, only[:new, :create, :show, :destroy]
-  resources :cities, only[:new, :create, :index, :show]
+  resources :users, only: [:new, :create, :show, :edit, :update]
+  resources :posts, only: [:new, :create, :show, :destroy]
+  resources :cities, only: [:new, :create, :index, :show]
 
 
 
