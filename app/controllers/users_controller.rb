@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+	
+	def show
+		@user = User.find(params[:id])
+		@posts = Post.where(user_id:(@user))
+	end
 
 	def new
 	end
@@ -8,10 +13,7 @@ class UsersController < ApplicationController
 
 		if @user.save
 			redirect_to @user
-	end
-
-	def show
-		@user = User.find(params[:id])
+		end
 	end
 
 	private
@@ -19,5 +21,5 @@ class UsersController < ApplicationController
 		def user_params
 			params.require(:user).permit(:email, :password, :password_confirmation, :full_name, :city)
 		end
-	
+
 end
