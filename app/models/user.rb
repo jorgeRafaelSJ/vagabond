@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	has_many :posts, dependent: :destroy
+	has_secure_password
 
 	# validates :email, :full_name, :password_digest, :presence => true
 	# validates :email, uniqueness: true
