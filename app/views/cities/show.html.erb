@@ -1,7 +1,8 @@
 <div class="jumbotron">
 	<%= @city.name %>
 </div>
-
+<!-- use button_to? -->
+<button id="new-post-btn" class="btn btn-lg-default"><%= link_to "Create New Post", new_city_post_path(@city) %></button>
 <!-- EACH POST FOR CITY -->
 <!-- thumbnail -->
 <div class="container">

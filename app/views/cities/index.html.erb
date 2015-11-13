@@ -5,7 +5,7 @@
 <div class="row">
 <% @cities.each do |city| %>
  <div class="col-xs-4 col-md-4">
-   <a href="#" class="thumbnail">
+   <a href="/cities/<%= city.id %>" class="thumbnail">
    <%= city.name %>
      <img src="..." alt="...">
    </a>
