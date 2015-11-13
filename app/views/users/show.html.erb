@@ -3,10 +3,14 @@
 		<div class="col-sm-4">
 			<img src="http://placehold.it/300x300" alt="">
 		</div>
-		<div class="col-sm-8">
+		<div class="col-sm-7">
 			<h2><%= @user.full_name %></h2>
 			<h4><%= @user.city %></h4>
 			<h4><%= @user.created_at %></h4>
+		</div>
+
+		<div class="col-sm-1">
+			<%= button_to "Edit", edit_user_path(current_user) %>
 		</div>
 	</div>
 
@@ -28,6 +32,7 @@
 							<%= post.content %>
 						</div>
 					</div>
+
 				</div>
 			</div>
 			<br>
