@@ -6,13 +6,13 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new(post_params)
+		@post = current_user.posts.create(post_params)
 		@city = City.find(params[:city_id])
 		if @post.save
-			@city.posts.push(@post)
+			@city.posts << @post
 			redirect_to city_path(@city)
 		else
-			redirect_to new_post_path
+			redirect_to new_city_post_path(@city)
 		end
 
 	end
