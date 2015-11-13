@@ -8,14 +8,15 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-10 col-sm-offset-1">
-			<% @posts.each do |post| %>
-				
+			<% if @posts.count >= 1 %>
+				<% @posts.each do |post| %>
+
 				<div class="col-sm-2">
 					<img src="http://placehold.it/100x100" alt="">
 				</div>
 
 				<div class="col-sm-10">
-					
+
 					<div>
 						<%= post.title %>
 					</div>
@@ -27,12 +28,15 @@
 					<div>
 						<% author =  User.find(post.user_id) %>
 						Posted by: <%= author.full_name %>
+				
+
 					</div>
 
 				</div>
 
 				<hr>
-			<% end %>
+				<% end %>
+			<% end %> 
 		</div>
 	</div>
 </div>
