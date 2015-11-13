@@ -14,7 +14,11 @@ class PostsController < ApplicationController
 		else
 			redirect_to new_city_post_path(@city)
 		end
+	end
 
+	def show
+		@post = Post.find(params[:id])
+		@city = City.find(params[:city_id])
 	end
 
 	private
