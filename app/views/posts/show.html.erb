@@ -4,6 +4,9 @@
 	</div>
 	<div class="col-sm-4">
 		<div>
+			<h6><%= @post.created_at.strftime("%B %d, %Y") %></h6>
+		</div>
+		<div>
 			<h1><%= @city.name %></h1>
 		</div>
 	<br>

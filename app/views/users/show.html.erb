@@ -7,7 +7,7 @@
 
 			<h2><%= @user.full_name %></h2>
 			<h4><%= @user.city %></h4>
-			<h4><%= @user.created_at %></h4>
+			<h4>Joined: <%= @user.created_at.strftime("%B %Y") %></h4>
 		</div>
 
 		<div class="col-sm-1">
@@ -23,7 +23,7 @@
 
 	<div class="container">
 		<!-- col-sm-10 col-sm-offset-1 -->
-		<% @posts.each do |post| %>
+		<% @posts.each do |post| %>						
 		<div class="row">
 			<div class="user-post col-sm-10 col-sm-offset-1">
 				<div class="col-sm-3">
@@ -31,6 +31,7 @@
 				</div>
 				<div class="col-sm-9">
 					<h3><%= link_to post.title, city_post_path(post.city_id, post.id) %></h3>
+					<h6><%= post.created_at.strftime("%B %d, %Y") %></h6>
 					<div>
 						<%= post.content %>
 						<% if current_user == @user %>
