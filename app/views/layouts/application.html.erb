@@ -20,7 +20,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Vagabundo</a>
+      <div class="navbar-brand">
+      <%= link_to "Vagabundo", root_path %>
+      </div>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -33,7 +35,7 @@
         <% end %>
 
         <% if current_user.present? %>
-          <li><a href="#">Welcome, <%= current_user.full_name %></a></li>
+          <li>Welcome, <span><%= link_to current_user.full_name, user_path(current_user) %></span></li>
           <li><%= link_to "Logout", logout_path, method: :delete %></li>
         <% end %>
 
