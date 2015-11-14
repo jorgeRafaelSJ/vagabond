@@ -42,10 +42,10 @@ class PostsController < ApplicationController
 		id = params[:id]
 		@post = Post.find(id)
 		@city = City.find(city_id)
-		@post.destroy
-
+		@post.delete
 		flash[:success] = "Post destroyed"
 		redirect_to root_path
+		
 	end
 
 
