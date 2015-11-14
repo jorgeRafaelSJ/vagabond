@@ -1,0 +1,14 @@
+<%= form_for [@city, @post] do |f| %>
+	<div class="col-sm-6 col-sm-offset-3">
+		<%= f.label :title %>
+		<%= f.text_field :title, class:'form-control' %>
+	<br>
+		<%= f.label :content %>
+		<%= f.text_area :content, size: "5x8", class: 'form-control' %>
+	<br>
+		<div class="text-right">
+			<%= f.submit "Submit Edit", class: 'btn btn-default' %>
+		</div>
+	</div>
+	<div class="col-sm-3"></div>
+<% end %>

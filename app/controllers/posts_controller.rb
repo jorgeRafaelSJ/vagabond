@@ -21,6 +21,21 @@ class PostsController < ApplicationController
 		@city = City.find(params[:city_id])
 	end
 
+	def edit
+		@post = Post.find(params[:id])
+		@city = City.find(params[:city_id])
+	end
+
+	def update
+		@post = Post.find(params[:id])
+		@city = City.find(params[:city_id])
+		if @post.update_attributes(post_params)
+		 redirect_to city_post_path(@city, @post)
+		else
+		  render 'edit'
+		end
+	end
+
 	private
 
 	def post_params

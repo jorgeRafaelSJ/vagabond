@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 
 
 resources :cities, only: [:new, :create, :index, :show] do
-  resources :posts, only: [:new, :create, :show, :destroy]
+  resources :posts, only: [:new, :create,:edit, :update, :show, :destroy]
 end
 
 post "users/:id/edit"    => "users#edit"
+post "cities/:city_id/posts/:id/edit" => "posts#edit"
 end
