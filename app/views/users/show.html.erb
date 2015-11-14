@@ -1,9 +1,13 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-4">
-			<img src="http://placehold.it/300x300" alt="">
+			<%= image_tag @user.avatar.url(:medium) %>
 		</div>
 		<div class="col-sm-7">
+			<!-- <h1> -->
+				<!--<%= image_tag @user.avatar.url %>
+				<%= image_tag @user.avatar.url(:thumb) %>-->
+			<!-- </h1> -->
 			<h2><%= @user.full_name %></h2>
 			<h4><%= @user.city %></h4>
 			<h4><%= @user.created_at %></h4>
@@ -19,23 +23,23 @@
 	<br>
 
 	<div class="container">
-		 <!-- col-sm-10 col-sm-offset-1 -->
+		<!-- col-sm-10 col-sm-offset-1 -->
 		<% @posts.each do |post| %>
-			<div class="row">
-				<div class="user-post col-sm-10 col-sm-offset-1">
-					<div class="col-sm-3">
-						<img src="http://placehold.it/150x150" alt="">
-					</div>
-					<div class="col-sm-9">
-						<h3><%= link_to post.title, city_post_path(post.city_id, post.id) %></h3>
-						<div>
-							<%= post.content %>
-						</div>
-					</div>
-
+		<div class="row">
+			<div class="user-post col-sm-10 col-sm-offset-1">
+				<div class="col-sm-3">
+					<img src="http://placehold.it/150x150" alt="">
 				</div>
+				<div class="col-sm-9">
+					<h3><%= link_to post.title, city_post_path(post.city_id, post.id) %></h3>
+					<div>
+						<%= post.content %>
+					</div>
+				</div>
+
 			</div>
-			<br>
+		</div>
+		<br>
 		<% end %>
 	</div>
 </div>
