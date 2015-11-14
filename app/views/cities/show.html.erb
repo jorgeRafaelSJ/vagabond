@@ -24,7 +24,7 @@
 					</div>
 				<br>
 					<div>
-						<%= post.content %>
+						<%= truncate(post.content, length: 1000) { link_to "Read More", city_post_path(post.city_id, post.id)} %>
 					</div>
 				<br>
 					<div>

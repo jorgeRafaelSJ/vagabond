@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
 	before_action :correct_user, only: :destroy
+	# def index
+	# 	@posts = Post.paginate(:page => params[:page])
+	# end
 	def new
 		@post = Post.new
 		@city = City.find(params[:city_id])	
