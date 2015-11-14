@@ -14,7 +14,9 @@
 		<div>
 			<h5><%= @post.content %></h5>
 		</div>
+		<% if current_user == @user %>
 		<%= button_to "Edit", edit_city_post_path%>
-		<%= link_to "Delete", city_post_path(@city, @post), method: :delete, data: { confirm: "You sure?" } %> 
+		<%= button_to "Delete", city_post_path(@city, @post), method: :delete, data: { confirm: "You sure?" } %> 
+		<% end %> 
 	</div>
 </div>

@@ -27,8 +27,13 @@
 					<br>
 					<div>
 						<% author =  User.find(post.user_id) %>
-						Posted by: <%= author.full_name %>
+						Posted by: <%=link_to author.full_name, user_path(author) %>
 					</div>
+					<% user = User.find(post.user_id) %> 
+					<% if current_user == user %>
+						<%= button_to "Edit", edit_city_post_path(post.city_id, post.id)%>
+						<%= button_to "Delete", city_post_path(post.city_id, post.id), method: :delete, data: { confirm: "You sure?" } %> 
+					<% end %> 
 					<br>
 
 				</div>
