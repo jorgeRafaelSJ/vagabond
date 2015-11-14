@@ -20,6 +20,7 @@ class PostsController < ApplicationController
 	def show
 		@post = Post.find(params[:id])
 		@city = City.find(params[:city_id])
+		@user = User.find(@post.user_id)
 	end
 
 	def edit
