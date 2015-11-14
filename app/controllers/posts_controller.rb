@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	before_action :correct_user, only: :destroy
 	def new
 		@post = Post.new
 		@city = City.find(params[:city_id])	
@@ -36,9 +37,27 @@ class PostsController < ApplicationController
 		end
 	end
 
+	def destroy
+		city_id = params[:city_id]
+		id = params[:id]
+		@post = Post.find(id)
+		@city = City.find(city_id)
+		@post.delete
+		flash[:success] = "Post destroyed"
+		redirect_to root_path
+		
+	end
+
+
 	private
 
-	def post_params
-		params.require(:post).permit(:title, :content)
-	end
+		def post_params
+			params.require(:post).permit(:title, :content)
+		end
+
+		def correct_user
+			@post = current_user.posts.find_by(id: params[:id])
+			redirect_to root_url if @post.nil?
+		end
+
 end
