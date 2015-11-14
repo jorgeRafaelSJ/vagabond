@@ -3,9 +3,11 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@posts = Post.where(user_id:(@user))
+		@city = City.find(@user.city)
 	end
 
 	def new
+		@cities = City.all
 	end
 
 	def create
