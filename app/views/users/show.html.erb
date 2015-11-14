@@ -10,7 +10,9 @@
 		</div>
 
 		<div class="col-sm-1">
+		<% if current_user == @user %> 
 			<%= button_to "Edit", edit_user_path(current_user) %>
+		<% end %>
 		</div>
 	</div>
 
@@ -30,6 +32,10 @@
 						<h3><%= link_to post.title, city_post_path(post.city_id, post.id) %></h3>
 						<div>
 							<%= post.content %>
+							<% if current_user == @user %>
+								<%= button_to "Edit", edit_city_post_path(post.city_id, post.id)%>
+								<%= button_to "Delete", city_post_path(post.city_id, post.id), method: :delete, data: { confirm: "You sure?" } %> 
+							<% end %> 
 						</div>
 					</div>
 
