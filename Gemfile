@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'will_paginate', '~> 3.0.6'
 #image uploading for users
 gem "paperclip", "~> 4.3"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
