@@ -1,3 +1,16 @@
 // Place all the styles related to the cities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.jumbotron {
+	
+	height: 500px;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+	text-align: right;
+	position: relative;
+}
+.jumbotron h1 {
+	margin-right: 150px;
+	margin-top: 0px;
+}
