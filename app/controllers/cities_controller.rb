@@ -1,6 +1,7 @@
 class CitiesController < ApplicationController
 	def index
 		@cities = City.all
+		@san_fran = City.where(name: 'San Francisco').first
 	end
 
 	def show
