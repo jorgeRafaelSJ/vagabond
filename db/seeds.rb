@@ -5,22 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-City.create(name: 'San Francisco')
-City.create(name: 'New York')
-City.create(name: 'Los Angeles')
-City.create(name: 'Miami')
-City.create(name: 'Chicago')
-City.create(name: 'Paris')
-City.create(name: 'London')
-City.create(name: 'Rome')
-City.create(name: 'Berlin')
-City.create(name: 'Tokyo')
-City.create(name: 'Shanghai')
-City.create(name: 'Hong Kong')
-City.create(name: 'Beijing')
-City.create(name: 'Seoul')
-City.create(name: 'Mumbai')
-City.create(name: 'Madrid')
-City.create(name: 'Sydney')
-City.create(name: 'Moscow')
-City.create(name: 'Amsterdam')
+cities = City.create([{name: 'San Francisco'}, {name: 'New York'}, {name: 'Los Angeles'}, {name: 'Miami'},
+					  {name: 'Chicago'}, {name: 'Paris'}, {name: 'London'}, {name: 'Rome'}, {name: 'Berlin'}, {name: 'Tokyo'},
+					  {name: 'Shanghai'}, {name: 'Hong Kong'}, {name: 'Beijing'}, {name: 'Seoul'}, {name: 'Mumbai'}, {name: 'Madrid'},
+					  {name: 'Madrid'}, {name: 'Sydney'}, {name: 'Moscow'}, {name: 'Amsterdam'}])
