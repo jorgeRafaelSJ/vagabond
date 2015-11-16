@@ -1,8 +1,21 @@
+
+<!-- Image needs to be here for dynamic rendering. Can't use clown hats in .css file -->
+<style media="screen">
+  .jumbotron { 
+  	background-image: url(<%= @city.img_url %>);
+  	color: white;
+  }
+
+</style>
+
+
 <div class="jumbotron">
-	<%= @city.name %>
+	<h1 class="citytitle"><%= @city.name %></h1>
 </div>
 <!-- use button_to? -->
-<button id="new-post-btn" class="btn btn-lg-default"><%= link_to "Create New Post", new_city_post_path(@city) %></button>
+<div class="text-center">
+	<button id="new-post-btn" class="btn btn-lg-default"><%= link_to "Create New Post", new_city_post_path(@city) %></button>
+</div>
 <!-- EACH POST FOR CITY -->
 <!-- thumbnail -->
 <div class="container">
