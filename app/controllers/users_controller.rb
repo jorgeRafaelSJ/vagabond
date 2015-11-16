@@ -3,12 +3,14 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@posts = Post.where(user_id:(@user)).reverse_order.all.paginate(page: params[:page], per_page: 10)
+		p @user.city
 		@city = City.find(@user.city)
 	end
 
-	# def new
+	def new
+		@user = User.new
 	# 	@cities = City.all
-	# end
+	end
 
 	def create
 		@user = User.new(user_params)
@@ -17,7 +19,8 @@ class UsersController < ApplicationController
 			session[:user_id] = @user.id
 			redirect_to @user
 		else
-			redirect_to new_user_path
+			# redirect_to new_user_path
+			render :new
 		end
 	end
 

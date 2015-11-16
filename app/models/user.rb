@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 	validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/]
 	do_not_validate_attachment_file_type :avatar
 
+	validates :city, presence: true
+
 	# validates :email, :full_name, :password_digest, :presence => true
 
 	# validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
