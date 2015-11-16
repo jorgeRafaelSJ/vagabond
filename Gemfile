@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+#limit posts per page
 gem 'will_paginate', '~> 3.0.6'
 #image uploading for users
 gem "paperclip", "~> 4.3"
@@ -44,10 +45,6 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
-  gem 'fog'
-
-  gem 'image_magick'
 
   gem 'rspec'
 end

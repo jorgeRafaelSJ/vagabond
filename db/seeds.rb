@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
 City.create(name: 'San Francisco', img_url: 'https://fly.manchesterairport.co.uk/travel/images/july_destination_carousel_sanfran')
 City.create(name: 'Barcelona', img_url: 'http://fly.stanstedairport.com/travel/images/destination_carousel_barcelona')
 City.create(name: 'Rome', img_url: 'http://www.bbepiscopolipinsky.it/wp-content/uploads/2014/08/testata-panorama-1500x600.jpg')
@@ -17,3 +18,4 @@ City.create(name: 'Hong Kong', img_url: 'http://gogochart.com/wp-content/uploads
 City.create(name: 'Amsterdam', img_url: 'https://fly.stanstedairport.com/travel/images/destination_carousel_amstedam')
 City.create(name: 'Chicago', img_url: 'http://i0.wp.com/fiduciaryassociates.com/wp-content/uploads/2013/01/Slide-1.png?resize=1500%2C600')
 City.create(name: 'Sydney', img_url: 'http://www.maven46.com/wp-content/uploads/2015/07/sydney-packing-feature-image.jpg')
+
