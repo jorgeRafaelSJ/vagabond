@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 			@city.posts << @post
 			redirect_to city_path(@city)
 		else
-			redirect_to new_city_post_path(@city)
+			render :new
 		end
 	end
 

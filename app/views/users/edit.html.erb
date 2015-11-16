@@ -1,4 +1,20 @@
 <div class="col-sm-4 col-sm-offset-4">
+<!-- error div goes here -->
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2 class="error-warning">
+      <%= pluralize(@user.errors.count, "error") %> prohibited
+      this user from being saved:
+    </h2>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+      <li class="error-message"><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="col-sm-4 col-sm-offset-4">
 	
 	<%= form_for @user, html: { multipart: true } do |f| %>
 		<%= f.label "profile image" %>
