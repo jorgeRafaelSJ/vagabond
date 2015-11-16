@@ -6,9 +6,9 @@ class UsersController < ApplicationController
 		@city = City.find(@user.city)
 	end
 
-	def new
-		@cities = City.all
-	end
+	# def new
+	# 	@cities = City.all
+	# end
 
 	def create
 		@user = User.new(user_params)
