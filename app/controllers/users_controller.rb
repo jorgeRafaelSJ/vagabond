@@ -2,13 +2,13 @@ class UsersController < ApplicationController
 	
 	def show
 		@user = User.find(params[:id])
-		@posts = Post.where(user_id:(@user))
+		@posts = Post.where(user_id:(@user)).reverse_order.all.paginate(page: params[:page], per_page: 10)
 		@city = City.find(@user.city)
 	end
 
-	def new
-		@cities = City.all
-	end
+	# def new
+	# 	@cities = City.all
+	# end
 
 	def create
 		@user = User.new(user_params)
