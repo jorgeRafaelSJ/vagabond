@@ -3,12 +3,12 @@
 </div>
 
 <div class="row">
-<% @cities.each do |city| %>
- <div class="col-xs-4 col-md-4">
-   <a href="/cities/<%= city.id %>" class="thumbnail">
-   <%= city.name %>
-     <img src="..." alt="...">
-   </a>
- </div>
-<% end %> 
- </div>
+	<% @cities.each do |city| %>
+		<div class="col-xs-4 col-md-4">
+			<a href="/cities/<%= city.id %>" class="thumbnail">
+				<%= city.name %>
+				<img src="..." alt="...">
+			</a>
+		</div>
+	<% end %> 
+</div>
