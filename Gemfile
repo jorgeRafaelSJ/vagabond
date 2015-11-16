@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+#limit posts per page
 gem 'will_paginate', '~> 3.0.6'
 #image uploading for users
 gem "paperclip", "~> 4.3"
