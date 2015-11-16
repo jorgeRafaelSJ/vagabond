@@ -48,6 +48,9 @@
 						<%= post.created_at.strftime("%B %d, %Y") %>
 					</div>
 				<br>
+					<div>
+						Tags: <%= post.tag_list %> 
+					</div>
 					<% user = User.find(post.user_id) %> 
 					<% if current_user == user %>
 						<%= button_to "Edit", edit_city_post_path(post.city_id, post.id)%>
