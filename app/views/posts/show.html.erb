@@ -1,32 +1,51 @@
-<div class="container">
-	<div class="col-sm-4 col-sm-offset-2">
-		<img src="http://placehold.it/300x300" alt="">
+<div class="container" id="single-post">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-2 col-sm-6">
+			<%= image_tag @user.avatar.url(:medium) %>
+		</div>
+
+		<div class="col-md-4 col-sm-5" id="post-details">
+			<div>
+				<h6><%= @post.created_at.strftime("%B %d, %Y") %></h6>
+			</div>
+			<div>
+				<%= link_to @city.name, @city %>
+			</div>
+			<div>
+				by <%= link_to @user.full_name, @user %>
+			</div>
+			<div>
+				<% if current_user == @user %>
+				<!-- <%= button_to "Edit", edit_city_post_path%> -->
+					<%= link_to edit_city_post_path, class: 'btn btn-success' do %>
+					  <i class="glyphicon glyphicon-edit"></i>
+					<% end %>
+				<!-- <%= button_to "Delete", city_post_path(@city, @post), method: :delete, data: { confirm: "You sure?" } %> -->
+					<%= link_to city_post_path(@city, @post), method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-success' do %>
+					  <i class="glyphicon glyphicon-remove"></i>
+					<% end %>
+				<% end %> 
+			</div>
+
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+
+			<div>
+				<h1><%= @post.title %></h1>
+			</div>
+		</div>
 	</div>
-	<div class="col-sm-4">
-		<div>
-			<h6><%= @post.created_at.strftime("%B %d, %Y") %></h6>
-		</div>
-		<div>
-			<!-- <h1><%= @city.name %></h1> -->
-			<%= link_to @city.name, @city %>
-		</div>
-	<br>
-		<div>
-			<h3><%= @post.title %></h3>
-		</div>
-	<br>
-		<div>
+
+	<hr>
+
+	<div class="row">
+		<div class="col-md-4 col-md-offset-2">
 			<h5><%= @post.content %></h5>
 		</div>
-		<% if current_user == @user %>
-		<!-- <%= button_to "Edit", edit_city_post_path%> -->
-			<%= link_to edit_city_post_path, class: 'btn btn-success' do %>
-			  <i class="glyphicon glyphicon-edit"></i>
-			<% end %>
-		<!-- <%= button_to "Delete", city_post_path(@city, @post), method: :delete, data: { confirm: "You sure?" } %> -->
-			<%= link_to city_post_path(@city, @post), method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-success' do %>
-			  <i class="glyphicon glyphicon-remove"></i>
-			<% end %>
-		<% end %> 
 	</div>
+	
 </div>

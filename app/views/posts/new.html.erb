@@ -1,23 +1,23 @@
-<div class="col-sm-4 col-sm-offset-4">
-<!-- error div goes here -->
-<% if @post.errors.any? %>
-  <div id="error_explanation">
-    <h2 class="error-warning">
-      <%= pluralize(@post.errors.count, "error") %> prohibited
-      this post from being saved:
-    </h2>
-    <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-      <li class="error-message"><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
-
+<div class="row">
+	<div class="col-sm-4 col-sm-offset-4">
+	<!-- error div goes here -->
+	<% if @post.errors.any? %>
+	  <div id="error_explanation">
+	    <h2 class="error-warning">
+	      <%= pluralize(@post.errors.count, "error") %> prohibited
+	      this post from being saved:
+	    </h2>
+	    <ul>
+	      <% @post.errors.full_messages.each do |msg| %>
+	      <li class="error-message"><%= msg %></li>
+	      <% end %>
+	    </ul>
+	  </div>
+	<% end %>
+</div>
 
 <%= form_for [@city, @post] do |f| %>
-	<div class="col-sm-6 col-sm-offset-3" id="new-post-form">
+	<div class="col-sm-4 col-sm-offset-4" id="new-post-form">
 		<%= f.label :title %>
 		<%= f.text_field :title, class:'form-control' %>
 	<br>
@@ -31,5 +31,4 @@
 			<%= f.submit "Submit", class:'btn btn-default' %>
 		</div>
 	</div>
-	<div class="col-sm-3"></div>
 <% end %>
