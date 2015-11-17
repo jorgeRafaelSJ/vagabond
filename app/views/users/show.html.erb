@@ -18,31 +18,36 @@
 
 	<hr>
 
-		<!-- col-sm-10 col-sm-offset-1 -->
 	<div class="row">
 		<h4 class="text-center">RECENT POSTS</h4>	
-		<% @posts.each do |post| %>					
-		<div class="row">
-			<div class="user-post col-sm-10 col-sm-offset-1">
-				<div class="col-sm-3">
-					<%= link_to image_tag(post.city.imgthumb_url), city_path(post.city)%>
-				</div>
-				<div class="col-sm-9">
-					<h3><%= link_to post.title, city_post_path(post.city_id, post.id) %></h3>
-					<h6><%= post.created_at.strftime("%B %d, %Y") %></h6>
-					<div>
+		<div class="col-sm-8 col-sm-offset-2">
+			<% @posts.each do |post| %>	
+				<div class="row">
+					<div class="col-md-2">
+						<%= link_to image_tag(post.city.imgthumb_url), city_path(post.city)%>
+					</div>
+					<div class="col-md-9">
+						<h3><%= link_to post.title, city_post_path(post.city_id, post.id) %></h3>
+
+						<h6><%= post.created_at.strftime("%B %d, %Y") %></h6>
 						<%= post.content %>
+					</div>
+					<div class="col-md-1">
 						<% if current_user == @user %>
-						<%= button_to "Edit", edit_city_post_path(post.city_id, post.id)%>
-						<%= button_to "Delete", city_post_path(post.city_id, post.id), method: :delete, data: { confirm: "You sure?" } %> 
+						<%= link_to edit_city_post_path(post.city_id, post.id), class: 'btn btn-success' do %>
+						  <i class="glyphicon glyphicon-edit"></i>
+						<% end %>
+
+						<%= link_to city_post_path(post.city_id, post.id), method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-success' do %>
+						  <i class="glyphicon glyphicon-remove"></i>
+						<% end %> 
 						<% end %>
 					</div>
-				</div>
-			</div>
+				</div> <!-- row -->
+				<hr>
+			<% end %>
 		</div>
-	</div>
+	</div> <!-- /row -->
 
-	<% end %>
-	</div>
 </div> <!-- /container -->
 <%= will_paginate @posts %>
