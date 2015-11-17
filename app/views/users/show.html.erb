@@ -35,8 +35,7 @@
 						<% if current_user == @user %>
 						<%= button_to "Edit", edit_city_post_path(post.city_id, post.id)%>
 						<%= button_to "Delete", city_post_path(post.city_id, post.id), method: :delete, data: { confirm: "You sure?" } %> 
-						<% end %> 
-						
+						<% end %>
 					</div>
 				</div>
 			</div>
