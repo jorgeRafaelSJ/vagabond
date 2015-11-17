@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :posts, dependent: :destroy
 	has_secure_password
-	validates :password, length: { minimum: 6 }
+	# validates :password, length: { minimum: 6 }
 	validates :city, :full_name, presence: true
 	validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 	validates :email, uniqueness: true
