@@ -4,7 +4,6 @@
   	background-image: url(<%= @city.img_url %>);
   	color: white;
   }
-
 </style>
 
 
@@ -26,14 +25,14 @@
 			<% @posts.each do |post| %>
 
 			<div class="row">
-				<div class="col-sm-2">
+				<div class="col-md-2">
 					<% author =  User.find(post.user_id) %>
 					<%= image_tag author.avatarthumb.url(:thumb) %>
 				</div>
 
-				<div class="col-sm-9">
+				<div class="col-md-9">
 					<div>
-						<%= link_to post.title, city_post_path(post.city_id, post.id) %> by <%=link_to author.full_name, user_path(author) %>
+						<span class="post-render-title"><%= link_to post.title, city_post_path(post.city_id, post.id) %></span> by <%=link_to author.full_name, user_path(author) %>
 					</div>
 				<br>
 					<div>
@@ -48,7 +47,7 @@
 						<%= truncate(post.content, length: 1000) { link_to "Read More", city_post_path(post.city_id, post.id)} %>
 					</div>
 				</div>
-				<div class="col-sm-1">
+				<div class="col-md-1">
 					<% user = User.find(post.user_id) %> 
 					<% if current_user == user %>
 						<%= link_to edit_city_post_path(post.city_id, post.id), class: 'btn btn-success' do %>

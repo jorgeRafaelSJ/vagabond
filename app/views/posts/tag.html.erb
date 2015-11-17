@@ -1,30 +1,29 @@
 <style>
-.jumbotron {
-	background: url(<%= @san_fran.img_url %>);
-	color: white;
-}
+	.jumbotron {
+		background: url(<%= @san_fran.img_url %>);
+		color: white;
+	}
 </style>
 
 <div class="jumbotron">
 <h1>Vagabundo</h1>
 </div>
 
-<h1>Posts with <%= @tag %> tag:</h1>
+<h1 class="tagging">Posts with <%= @tag %> tag:</h1>
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1">
+		<div class="col-sm-8 col-sm-offset-2">
 			<% if @posts.count >= 1 %>
 			<% @posts.each do |post| %>
 
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-md-2">
 					<% author =  User.find(post.user_id) %>
 					<%= image_tag author.avatarthumb.url(:thumb) %>
 				</div>
 
-				<div class="col-sm-9">
-
+				<div class="col-md-9">
 					<div>
 						<%= link_to post.title, city_post_path(post.city_id, post.id) %>
 					</div>
@@ -44,13 +43,17 @@
 					<div>
 						Tags: <%= raw post.tag_list.map { |t| link_to t, tags_path(t)}.join(', ') %> 
 					</div>
+				</div>
+				<div class="col-md-1">
 					<% user = User.find(post.user_id) %> 
 					<% if current_user == user %>
-						<%= button_to "Edit", edit_city_post_path(post.city_id, post.id)%>
-						<%= button_to "Delete", city_post_path(post.city_id, post.id), method: :delete, data: { confirm: "You sure?" } %> 
+						<%= link_to edit_city_post_path(post.city_id, post.id), class: 'btn btn-success' do %>
+						  <i class="glyphicon glyphicon-edit"></i>
+						<% end %>
+						<%= link_to city_post_path(post.city_id, post.id), method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-success' do %>
+						  <i class="glyphicon glyphicon-remove"></i>
+						<% end %> 
 					<% end %> 
-				<br>
-
 				</div>
 			</div>
 			<hr>
