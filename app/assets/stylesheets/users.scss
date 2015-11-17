@@ -6,6 +6,10 @@
 	margin-top: 65px;
 }
 
+#edit-form {
+	margin-top: 80px;
+}
+
 #profile-details {
 	margin-top: 20px;
 }
@@ -16,9 +20,17 @@
 
 #user-description {
 	margin-top: 0px;
-	padding-left: 0px;
+	padding-left: 15px;
 }
 
 #user-name {
 	margin-top: 5px;
+}
+
+h3 {
+	margin-top: 0px !important;
+}
+
+.text-center {
+	margin-bottom: 20px;
 }
