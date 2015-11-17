@@ -30,6 +30,9 @@
 						<h3><%= link_to post.title, city_post_path(post.city_id, post.id) %></h3>
 
 						<h6><%= post.created_at.strftime("%B %d, %Y") %></h6>
+						<div>
+							Tags: <%= raw post.tag_list.map { |t| link_to t, tags_path(t)}.join(', ') %> 
+						</div>
 						<%= post.content %>
 					</div>
 					<div class="col-md-1">

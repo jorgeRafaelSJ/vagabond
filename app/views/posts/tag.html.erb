@@ -25,15 +25,7 @@
 
 				<div class="col-md-9">
 					<div>
-						<%= link_to post.title, city_post_path(post.city_id, post.id) %>
-					</div>
-				<br>
-					<div>
-						<%= truncate(post.content, length: 1000) { link_to "Read More", city_post_path(post.city_id, post.id)} %>
-					</div>
-				<br>
-					<div>
-						Posted by: <%=link_to author.full_name, user_path(author) %>
+						<span class="post-render-title"><%= link_to post.title, city_post_path(post.city_id, post.id) %></span> by <%=link_to author.full_name, user_path(author) %>
 					</div>
 				<br>
 					<div>
@@ -42,6 +34,10 @@
 				<br>
 					<div>
 						Tags: <%= raw post.tag_list.map { |t| link_to t, tags_path(t)}.join(', ') %> 
+					</div>
+				<br>
+					<div>
+						<%= truncate(post.content, length: 1000) { link_to "Read More", city_post_path(post.city_id, post.id)} %>
 					</div>
 				</div>
 				<div class="col-md-1">
