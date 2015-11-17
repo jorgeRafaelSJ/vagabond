@@ -2,9 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 #new-post-btn {
 	margin-bottom: 30px;
+}
+
+#empty-city {
+	text-align: center;
+	margin-bottom: 100px;
 }
 
 .jumbotron {
@@ -15,10 +19,12 @@
 	text-align: right;
 	position: relative;
 }
+
 .jumbotron h1 {
 	margin-right: 150px;
 	margin-top: 0px;
 }
+
 .cities-thumbnail  {
 	height: 180px;
 	color: white;
@@ -30,11 +36,26 @@
 :hover .cities-thumbnail {
 	text-decoration: none;
 }
+
 .city-boxes {
 	padding-left: 0px !important;
 	padding-right: 0px !important;
 	border-radius: 0px !important;
 }
+
 .city-name {
 	margin-left: 20px;
 }
+
+.btn-success {
+	color: #080808 !important;
+	background-color: inherit !important;
+	border: none !important;
+}
+
+
+
+
+
+
+

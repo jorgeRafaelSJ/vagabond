@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   
   #LOGIN FORM
   def new
+    @user = User.new
   end
 
   #LOGIN
@@ -13,6 +14,7 @@ class SessionsController < ApplicationController
 
   		redirect_to user_path(current_user)
   	else
+      flash.now[:danger] = 'Invalid email/password combination'
   		render :new
   	end
   end

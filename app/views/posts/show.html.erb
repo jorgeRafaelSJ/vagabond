@@ -7,7 +7,8 @@
 			<h6><%= @post.created_at.strftime("%B %d, %Y") %></h6>
 		</div>
 		<div>
-			<h1><%= @city.name %></h1>
+			<!-- <h1><%= @city.name %></h1> -->
+			<%= link_to @city.name, @city %>
 		</div>
 	<br>
 		<div>
@@ -18,8 +19,14 @@
 			<h5><%= @post.content %></h5>
 		</div>
 		<% if current_user == @user %>
-		<%= button_to "Edit", edit_city_post_path%>
-		<%= button_to "Delete", city_post_path(@city, @post), method: :delete, data: { confirm: "You sure?" } %> 
+		<!-- <%= button_to "Edit", edit_city_post_path%> -->
+			<%= link_to edit_city_post_path, class: 'btn btn-success' do %>
+			  <i class="glyphicon glyphicon-edit"></i>
+			<% end %>
+		<!-- <%= button_to "Delete", city_post_path(@city, @post), method: :delete, data: { confirm: "You sure?" } %> -->
+			<%= link_to city_post_path(@city, @post), method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-success' do %>
+			  <i class="glyphicon glyphicon-remove"></i>
+			<% end %>
 		<% end %> 
 	</div>
 </div>
