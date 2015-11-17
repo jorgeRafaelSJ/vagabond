@@ -4,18 +4,27 @@
 	color: white;
 }
 </style>
+<div class="index-page">
+	<div class="jumbotron">
+		<h1>Vagabundo</h1>
+		<h3>Share the world with the world </h3>
+	</div>
 
-<div class="jumbotron">
-<h1>Vagabundo</h1>
+	<div class="container cities-container">
+		<div class="row">
+			<% @cities.each do |city| %>
+				<div class="col-xs-4 col-md-4 city-boxes">
+				   <a href="/cities/<%= city.id %>" class="thumbnail cities-thumbnail" style="background: url(<%= city.img_url %>); background-size: auto 180px;">
+				   	<div class="city-name"><%= city.name %></div>
+				   </a>
+				</div>
+			<% end %> 
+		 </div>
+	 </div>
 </div>
-<div class="container">
-<div class="row">
-<% @cities.each do |city| %>
- <div class="col-xs-4 col-md-4 city-boxes">
-   <a href="/cities/<%= city.id %>" class="thumbnail cities-thumbnail" style="background: url(<%= city.img_url %>); background-size: auto 180px;">
-   	<div class="city-name"><%= city.name %></div>
-   </a>
- </div>
-<% end %> 
- </div>
- </div>
+
+<div class="footer">
+	<div class="signature">
+		<h4 class="pull-right">By Johnny, Noel, and Jorge</h4>
+	</div>
+</div>
