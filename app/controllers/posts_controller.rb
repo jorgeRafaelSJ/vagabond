@@ -1,5 +1,12 @@
 class PostsController < ApplicationController
 	before_action :correct_user, only: :destroy
+
+	def tag
+		@posts = Post.tagged_with(params[:id]).reverse_order
+		@san_fran = City.where(name: 'San Francisco').first
+		@tag = params[:id]
+	end
+
 	def index
 		@posts = Post.all
 		@posts = Post.paginate(:page => params[:page], :per_page => 2)
@@ -37,9 +44,9 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 		@city = City.find(params[:city_id])
 		if @post.update_attributes(post_params)
-		 redirect_to city_post_path(@city, @post)
+		 redirect_to city_path(@city)
 		else
-		  render 'edit'
+		  render :edit
 		end
 	end
 
@@ -50,7 +57,7 @@ class PostsController < ApplicationController
 		@city = City.find(city_id)
 		@post.delete
 		flash[:success] = "Post destroyed"
-		redirect_to root_path
+		redirect_to @city
 		
 	end
 

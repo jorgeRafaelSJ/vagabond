@@ -13,7 +13,7 @@ end
 
 post "users/:id/edit"    => "users#edit"
 post "cities/:city_id/posts/:id/edit" => "posts#edit"
-
+get '/posts/tagged/:id' => 'posts#tag', :as => :tags 
 # delete "/cities/:city_id/posts/:id"  => "posts#destroy", as: :city_posts_delete
 end
 
