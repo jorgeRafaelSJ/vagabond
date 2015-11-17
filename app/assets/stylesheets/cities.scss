@@ -23,6 +23,14 @@
 .jumbotron h1 {
 	padding-right: 150px;
 	margin-top: 0px;
+	font-size: 30px;
+	margin-bottom: 10px;
+	
+}
+.jumbotron h3 {
+	padding-right: 100px;
+	padding-top: 0px;
+	color: #333 !important;
 }
 
 .cities-thumbnail  {
@@ -30,7 +38,7 @@
 	color: white;
 	font-size: 38px;
 	padding-left: 30px;
-	margin-bottom: 0px !important;
+	margin-bottom: 6px !important;
 }
 
 :hover .cities-thumbnail {
@@ -38,9 +46,8 @@
 }
 
 .city-boxes {
-	padding-left: 0px !important;
-	padding-right: 0px !important;
-	border-radius: 0px !important;
+	padding-left: 3px !important;
+	padding-right: 3px !important;
 }
 
 .city-name {
@@ -54,11 +61,34 @@
 	border: none !important;
 }
 .city-boxes :hover {
-		background-color: none;
+	background-color: none;
+}
+#index-row {
+	background-color: #333
+}
+.cities-container {
+	padding-bottom: 20px;
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+}
+#brand a {
+	font-size: 30px !important;
+	color: white !important;
+}
+#brand :hover{
+	text-decoration: none !important;
+	color: grey !important;
+}
+.index-page {
+	background-color: #fafafa;
 }
 
-
-
-
-
-
+.footer {
+	background-color: #222;
+	color: #ccc;
+}
+.signature {
+	padding-top: 50px;
+	padding-bottom: 75px;
+	padding-right: 30px;
+}
